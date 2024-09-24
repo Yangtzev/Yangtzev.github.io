@@ -3808,7 +3808,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[5] || (t[5] = r => i.jinjifra[1] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[1]]]), _(T(i.jinjifra[1] * 30), 1)])]), c("div", null, [_(" 紧急溃乱魔典(25)"), c("span", Ml, [c("button", {
+    }, null, 512), [[H, i.jinjifra[1]]]), _(T(i.jinjifra[1] * 25), 1)])]), c("div", null, [_(" 紧急溃乱魔典(25)"), c("span", Ml, [c("button", {
         class: "changecount",
         onClick: t[6] || (t[6] = (...r) => o.gongsijiugejian && o.gongsijiugejian(...r))
     }, "-"), c("span", Al, T(i.jinjifra[2]), 1), c("button", {
@@ -3819,7 +3819,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[8] || (t[8] = r => i.jinjifra[2] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[2]]]), _(T(i.jinjifra[2] * 20), 1)])]), c("div", null, [_(" 紧急年代断层+全收刺(40)"), c("span", Fl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[2]]]), _(T(i.jinjifra[2] * 25), 1)])]), c("div", null, [_(" 紧急年代断层+全收刺(40)"), c("span", Fl, [c("button", {
         class: "changecount",
         onClick: t[9] || (t[9] = (...r) => o.luwanggongsijiugejian && o.luwanggongsijiugejian(...r))
     }, "-"), c("span", Sl, T(i.jinjifra[3]), 1), c("button", {
@@ -3830,7 +3830,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[11] || (t[11] = r => i.jinjifra[3] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[3]]]), _(T(i.jinjifra[3] * 30), 1)])]), c("div", null, [_(" 紧急假想对冲(40)"), c("span", Vl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[3]]]), _(T(i.jinjifra[3] * 40), 1)])]), c("div", null, [_(" 紧急假想对冲(40)"), c("span", Vl, [c("button", {
         class: "changecount",
         onClick: t[12] || (t[12] = (...r) => o.tansuotidewuhoujian && o.tansuotidewuhoujian(...r))
     }, "-"), c("span", Rl, T(i.jinjifra[4]), 1), c("button", {
@@ -3841,7 +3841,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[14] || (t[14] = r => i.jinjifra[4] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[4]]]), _(T(i.jinjifra[4] * 20), 1)])]), c("div", null, [_(" 紧急朽败考察(30)"), c("span", Nl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[4]]]), _(T(i.jinjifra[4] * 40), 1)])]), c("div", null, [_(" 紧急朽败考察(30)"), c("span", Nl, [c("button", {
         class: "changecount",
         onClick: t[15] || (t[15] = (...r) => o.renzaowujian && o.renzaowujian(...r))
     }, "-"), c("span", Hl, T(i.jinjifra[5]), 1), c("button", {
@@ -3852,7 +3852,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[17] || (t[17] = r => i.jinjifra[5] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[5]]]), _(T(i.jinjifra[5] * 90), 1)])]), c("div", null, [_(" 紧急猩红甬道(50)"), c("span", Bl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[5]]]), _(T(i.jinjifra[5] * 30), 1)])]), c("div", null, [_(" 紧急猩红甬道(50)"), c("span", Bl, [c("button", {
         class: "changecount",
         onClick: t[18] || (t[18] = (...r) => o.luwangrenzaowujian && o.luwangrenzaowujian(...r))
     }, "-"), c("span", Kl, T(i.jinjifra[6]), 1), c("button", {
@@ -3863,7 +3863,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[20] || (t[20] = r => i.jinjifra[6] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[6]]]), _(T(i.jinjifra[6] * 110), 1)])]), c("div", null, [_(" 紧急通道封锁(30)"), c("span", Ll, [c("button", {
+    }, null, 512), [[H, i.jinjifra[6]]]), _(T(i.jinjifra[6] * 50), 1)])]), c("div", null, [_(" 紧急通道封锁(30)"), c("span", Ll, [c("button", {
         class: "changecount",
         onClick: t[21] || (t[21] = (...r) => o.bennengwuranjian && o.bennengwuranjian(...r))
     }, "-"), c("span", Dl, T(i.jinjifra[7]), 1), c("button", {
@@ -3874,7 +3874,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[23] || (t[23] = r => i.jinjifra[7] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[7]]]), _(T(i.jinjifra[7] * 50), 1)])]), c("div", null, [_(" 紧急寄人城池下(40)"), c("span", Wl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[7]]]), _(T(i.jinjifra[7] * 30), 1)])]), c("div", null, [_(" 紧急寄人城池下(40)"), c("span", Wl, [c("button", {
         class: "changecount",
         onClick: t[24] || (t[24] = (...r) => o.wangzhexingjunjian && o.wangzhexingjunjian(...r))
     }, "-"), c("span", ql, T(i.jinjifra[8]), 1), c("button", {
@@ -3885,7 +3885,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[26] || (t[26] = r => i.jinjifra[8] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[8]]]), _(T(i.jinjifra[8] * 50), 1)])]), c("div", null, [_(" 紧急计划耕种(60)"), c("span", Jl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[8]]]), _(T(i.jinjifra[8] * 40), 1)])]), c("div", null, [_(" 紧急计划耕种(60)"), c("span", Jl, [c("button", {
         class: "changecount",
         onClick: t[27] || (t[27] = (...r) => o.luwangwangzhexingjunjian && o.luwangwangzhexingjunjian(...r))
     }, "-"), c("span", Yl, T(i.jinjifra[9]), 1), c("button", {
@@ -3896,7 +3896,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[29] || (t[29] = r => i.jinjifra[9] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[9]]]), _(T(i.jinjifra[9] * 70), 1)])]), c("div", null, [_(" 紧急谋求共识(60)"), c("span", Xl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[9]]]), _(T(i.jinjifra[9] * 60), 1)])]), c("div", null, [_(" 紧急谋求共识(60)"), c("span", Xl, [c("button", {
         class: "changecount",
         onClick: t[30] || (t[30] = (...r) => o.yuelizhizaijian && o.yuelizhizaijian(...r))
     }, "-"), c("span", Zl, T(i.jinjifra[10]), 1), c("button", {
@@ -3907,7 +3907,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[32] || (t[32] = r => i.jinjifra[10] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[10]]]), _(T(i.jinjifra[10] * 35), 1)])]), c("div", null, [_(" 紧急神圣的渴求(80)"), c("span", Ql, [c("button", {
+    }, null, 512), [[H, i.jinjifra[10]]]), _(T(i.jinjifra[10] * 60), 1)])]), c("div", null, [_(" 紧急神圣的渴求(80)"), c("span", Ql, [c("button", {
         class: "changecount",
         onClick: t[33] || (t[33] = (...r) => o.luwangyuelizhizaijian && o.luwangyuelizhizaijian(...r))
     }, "-"), c("span", Gl, T(i.jinjifra[11]), 1), c("button", {
@@ -3918,7 +3918,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[35] || (t[35] = r => i.jinjifra[11] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 55), 1)])]), c("div", null, [_(" 时光凯旋无漏(70)"), c("span", $l, [c("button", {
+    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 80), 1)])]), c("div", null, [_(" 时光凯旋无漏(70)"), c("span", $l, [c("button", {
         class: "changecount",
         onClick: t[36] || (t[36] = (...r) => o.shenglingdezhongdianjian && o.shenglingdezhongdianjian(...r))
     }, "-"), c("span", eu, T(i.jinjifra[12]), 1), c("button", {
@@ -3929,14 +3929,14 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[38] || (t[38] = r => i.jinjifra[12] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * 90), 1)])])])
+    }, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * 70), 1)])])])
 }
 const nu = Ee(zl, [["render", tu]])
   , iu = {
     data() {
         return {
             speval: [0, 0, 0, 0],
-            spefen: [150, 100, 80, 100],
+            spefen: [150, 120, 80, 100],
             zhengyishizheval: 0,
             zhengyishizhefen: [0, 0, -40, -70, -120, 50],
             yingxiongcount: -1,
