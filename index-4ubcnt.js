@@ -4125,29 +4125,82 @@ const _u = Ee(bu, [["render", xu]])
   , vu = {
     data() {
         return {
-            kangya: "",
-            kangyacount: 1
+            sichou: "",
+            sichoucount: 1
         }
     },
     computed: {
-        kangyascore: function() {
-            return this.kangya ? this.kangyacount = 0.9 : this.kangyacount = 1,
-            this.$emit("setkangya", this.kangyacount),
-            this.kangyacount
+        sichouscore: function() {
+            return this.sichou ? this.sichoucount = 0.9 : this.sichoucount = 1,
+            this.$emit("setsichou", this.sichoucount),
+            this.sichoucount
+        }
+    }
+}
+  , ub = {
+    data() {
+        return {
+            lantu: "",
+            lantucount: 1
+        }
+    },
+    computed: {
+        lantuscore: function() {
+            return this.lantu ? this.lantucount = 0.85 : this.lantucount = 1,
+            this.$emit("setlantu", this.lantucount),
+            this.lantucount
+        }
+    }
+}
+, uc = {
+    data() {
+        return {
+            wsde: "",
+            wsdecount: 1
+        }
+    },
+    computed: {
+        wsdescore: function() {
+            return this.wsde ? this.wsdecount = 0.9 : this.wsdecount = 1,
+            this.$emit("setwsde", this.wsdecount),
+            this.wsdecount
         }
     }
 }
   , wu = {
-    class: "kangya"
+    class: "sichou"
+}
+  , sb = {
+    class: "lantu"
+}
+  , jb = {
+    class: "wsde"
 };
 function Cu(e, t, n, s, i, o) {
     return we(),
     Ce("div", wu, [c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[0] || (t[0] = r => i.kangya = r),
+        "onUpdate:modelValue": t[0] || (t[0] = r => i.sichou = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.kangya]]), _("拥有死仇时代的恨意 " + T(o.kangyascore) + "倍分数 ", 0.9)])])
+    }, null, 512), [[oe, i.sichou]]), _("拥有死仇时代的恨意 " + T(o.sichouscore) + "倍分数 ", 0.9)])])
+}
+function Cu(e, t, n, s, i, o) {
+    return we(),
+    Ce("div", sb, [c("div", null, [k(c("input", {
+        "onUpdate:modelValue": t[0] || (t[0] = r => i.lantu = r),
+        type: "checkbox"
+    }, null, 512), [[oe, i.lantu]]), _("蓝图测绘分队 " + T(o.lantuscore) + "倍分数 ", 0.85)])])
+}
+function Cu(e, t, n, s, i, o) {
+    return we(),
+    Ce("div", jb, [c("div", null, [k(c("input", {
+        "onUpdate:modelValue": t[0] || (t[0] = r => i.wsde = r),
+        type: "checkbox"
+    }, null, 512), [[oe, i.wsde]]), _("抓取维什戴尔 " + T(o.lantuscore) + "倍分数 ", 0.9)])])
 }
 const Eu = Ee(vu, [["render", Cu]]);
+const ua = Ee(ub, [["render", Cu]]);
+const wa = Ee(uc, [["render", Cu]]);
+
 const zu = {
     data() {
         return {
@@ -4159,12 +4212,14 @@ const zu = {
             score6: 0,
             score7: 0,
             score8: 0,
-            score9: 1
+            score9: 1,
+            scorel: 1,
+            scorew: 1
         }
     },
     computed: {
         score: function() {
-            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * this.score9
+            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (this.score9 + this.scorel + this.scorew)
         }
     },
     methods: {
@@ -4192,8 +4247,14 @@ const zu = {
         getjiesuan: function(e) {
             this.score8 = e
         },
-        getkangya: function(e) {
+        getsichou: function(e) {
             this.score9 = e
+        },
+        getlantu: function(e) {
+            this.scorel = e
+        },
+        getwsde: function(e) {
+            this.scorew = e
         },
         empty: function() {
             this.score = 0,
@@ -4223,7 +4284,9 @@ const zu = {
             this.$refs.jiesuan.xiuzhengcount = "",
             this.$refs.jiesuan.jiesuan = 0,
             this.$refs.guiling.play(),
-            this.$refs.kangya.kangya = ""
+            this.$refs.sichou.sichou = ""
+            this.$refs.sichou.lantu = ""
+            this.$refs.sichou.wsde = ""
         }
     },
     components: {
@@ -4235,7 +4298,9 @@ const zu = {
         cangpin: du,
         yuanshidin: mu,
         jiesuan: _u,
-        kangya: Eu
+        sichou: Eu,
+        lantu: ua,
+        wsde: wa
     }
 }
   , Ou = {
@@ -4264,7 +4329,9 @@ function Mu(e, t, n, s, i, o) {
       , v = Oe("yuanshidin")
       , E = Oe("spe")
       , U = Oe("jiesuan")
-      , W = Oe("kangya");
+      , W = Oe("sichou")
+      , l = Oe("lantu")
+      , b = Oe("wsde");
     return we(),
     Ce("div", Ou, [Tu, c("div", ku, [Z(r, {
         onSetlinshi: o.getlinshi,
@@ -4292,9 +4359,15 @@ function Mu(e, t, n, s, i, o) {
         onSetjiesuan: o.getjiesuan,
         ref: "jiesuan"
     }, null, 8, ["onSetjiesuan"]), Z(W, {
-        onSetkangya: o.getkangya,
-        ref: "kangya"
-    }, null, 8, ["onSetkangya"]), c("div", Pu, " 总分：" + T(o.score), 1), c("div", null, [c("button", {
+        onSetsichou: o.getsichou,
+        ref: "sichou"
+    }, null, 8, ["onSetjiesuan"]), Z(l, {
+        onSetsichou: o.getsichou,
+        ref: "lantu"
+    }, null, 8, ["onSetjiesuan"]), Z(b, {
+        onSetsichou: o.getsichou,
+        ref: "wsde"
+    }, null, 8, ["onSetsichou"]), c("div", Pu, " 总分：" + T(o.score), 1), c("div", null, [c("button", {
         class: "qingkong",
         onClick: t[0] || (t[0] = (...S) => o.empty && o.empty(...S))
     }, "归零"), c("audio", Iu, null, 512)])]), Uu])
