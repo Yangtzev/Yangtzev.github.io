@@ -3959,7 +3959,7 @@ const nu = Ee(zl, [["render", tu]])
   , su = {
     class: "part3"
 }
-  , ou = c("div", null, " 特殊关卡每个30分 ", -1)
+  , ou = c("div", null, " 继承，鸭本，修女每个30分 ", -1)
   , ru = c("div", null, " 全遇到+120分 ", -1)
   , lu = c("div", null, " 临时招募ban位但不携带也可加分 ", -1);
 function uu(e, t, n, s, i, o) {
