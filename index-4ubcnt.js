@@ -3936,7 +3936,7 @@ const nu = Ee(zl, [["render", tu]])
     data() {
         return {
             speval: [0, 0, 0, 0],
-            spefen: [150, 100, 80, 50],
+            spefen: [1, 100, 80, 50],
             zhengyishizheval: 0,
             zhengyishizhefen: [0, 0, -40, -70, -120, 50],
             yingxiongcount: -1,
@@ -3967,7 +3967,7 @@ function uu(e, t, n, s, i, o) {
     Ce("div", su, [_(" 特殊关卡和ban人得分：" + T(o.spescore) + " ", 1), c("div", null, [c("form", null, [c("div", null, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.speval[0] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[0]]]), _("不招募维什戴尔(150) ")]), c("div", null, [k(c("input", {
+    }, null, 512), [[oe, i.speval[0]]]), _("全程不取钱(1) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[1] || (t[1] = r => i.speval[1] = r),
         type: "checkbox"
     }, null, 512), [[oe, i.speval[1]]]), _("不招募逻各斯(100) ")]), c("div", null, [k(c("input", {
@@ -4126,12 +4126,12 @@ const _u = Ee(bu, [["render", xu]])
     data() {
         return {
             sichou: "",
-            sichoucount: 0
+            sichoucount: 1
         }
     },
     computed: {
         sichouscore: function() {
-            return this.sichou ? this.sichoucount = -0.1 : this.sichoucount = 1,
+            return this.sichou ? this.sichoucount = 0.9 : this.sichoucount = 1,
             this.$emit("setsichou", this.sichoucount),
             this.sichoucount
         }
@@ -4141,12 +4141,12 @@ const _u = Ee(bu, [["render", xu]])
     data() {
         return {
             lantu: "",
-            lantucount: 0
+            lantucount: 1
         }
     },
     computed: {
         lantuscore: function() {
-            return this.lantu ? this.lantucount = -0.15 : this.lantucount = 1,
+            return this.lantu ? this.lantucount = 0.85 : this.lantucount = 1,
             this.$emit("setlantu", this.lantucount),
             this.lantucount
         }
@@ -4156,12 +4156,12 @@ const _u = Ee(bu, [["render", xu]])
     data() {
         return {
             wsde: "",
-            wsdecount: 0
+            wsdecount: 1
         }
     },
     computed: {
         wsdescore: function() {
-            return this.wsde ? this.wsdecount = -0.1 : this.wsdecount = 1,
+            return this.wsde ? this.wsdecount = 0.9 : this.wsdecount = 1,
             this.$emit("setwsde", this.wsdecount),
             this.wsdecount
         }
@@ -4219,7 +4219,7 @@ const zu = {
     },
     computed: {
         score: function() {
-            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (1 + this.score9 + this.scorel + this.scorew)
+            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (1 * this.score9 * this.scorel * this.scorew)
         }
     },
     methods: {
