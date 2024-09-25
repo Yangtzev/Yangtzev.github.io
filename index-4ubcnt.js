@@ -4145,7 +4145,7 @@ function Cu(e, t, n, s, i, o) {
     Ce("div", wu, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.kangya = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.kangya]]), _("拥有死仇时代的恨意 " + T(o.kangyascore) + "倍分数 ", 1)])])
+    }, null, 512), [[oe, i.kangya]]), _("拥有死仇时代的恨意 " + T(o.kangyascore) + "倍分数 ", 0.8)])])
 }
 const Eu = Ee(vu, [["render", Cu]]);
 const zu = {
