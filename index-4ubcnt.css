@@ -101,14 +101,16 @@ a:hover {
     position: absolute;
     left: 650px;
     top: 470px;
-    width: 320px
+    width: 320px;
+    height: 20px
 }
 
 .wsde {
     position: absolute;
     left: 650px;
     top: 500px;
-    width: 320px
+    width: 320px;
+    height: 20px
 }
 
 .zongfen-wrapper {
