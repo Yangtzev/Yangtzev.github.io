@@ -4176,30 +4176,30 @@ const _u = Ee(bu, [["render", xu]])
   , jb = {
     class: "wsde"
 };
-function Cu(e, t, n, s, i, o) {
+function Cu1(e, t, n, s, i, o) {
     return we(),
     Ce("div", wu, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.sichou = r),
         type: "checkbox"
     }, null, 512), [[oe, i.sichou]]), _("拥有死仇时代的恨意 " + T(o.sichouscore) + "倍分数 ", 0.9)])])
 }
-function Cu(e, t, n, s, i, o) {
+function Cu2(e, t, n, s, i, o) {
     return we(),
     Ce("div", sb, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.lantu = r),
         type: "checkbox"
     }, null, 512), [[oe, i.lantu]]), _("蓝图测绘分队 " + T(o.lantuscore) + "倍分数 ", 0.85)])])
 }
-function Cu(e, t, n, s, i, o) {
+function Cu3(e, t, n, s, i, o) {
     return we(),
     Ce("div", jb, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.wsde = r),
         type: "checkbox"
     }, null, 512), [[oe, i.wsde]]), _("抓取维什戴尔 " + T(o.lantuscore) + "倍分数 ", 0.9)])])
 }
-const Eu = Ee(vu, [["render", Cu]]);
-const ua = Ee(ub, [["render", Cu]]);
-const wa = Ee(uc, [["render", Cu]]);
+const Eu = Ee(vu, [["render", Cu1]]);
+const ua = Ee(ub, [["render", Cu2]]);
+const wa = Ee(uc, [["render", Cu3]]);
 
 const zu = {
     data() {
