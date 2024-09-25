@@ -4362,10 +4362,10 @@ function Mu(e, t, n, s, i, o) {
         onSetsichou: o.getsichou,
         ref: "sichou"
     }, null, 8, ["onSetjiesuan"]), Z(l, {
-        onSetsichou: o.getsichou,
+        onSetsichou: o.getlantu,
         ref: "lantu"
     }, null, 8, ["onSetjiesuan"]), Z(b, {
-        onSetsichou: o.getsichou,
+        onSetsichou: o.getwsde,
         ref: "wsde"
     }, null, 8, ["onSetsichou"]), c("div", Pu, " 总分：" + T(o.score), 1), c("div", null, [c("button", {
         class: "qingkong",
