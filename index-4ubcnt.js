@@ -4072,7 +4072,7 @@ const du = Ee(fu, [["render", hu]])
     computed: {
         yuanshidinscore: function() {
             return this.yuanshidincount = 0,
-            this.start - this.end > 60 && (this.yuanshidincount = (this.start - this.end - 60) * -60),
+            this.start - this.end > 60 && (this.yuanshidincount = (this.start - this.end - 60) * -50),
             this.$emit("setyuanshidin", this.yuanshidincount),
             this.yuanshidincount
         }
