@@ -4219,7 +4219,7 @@ const zu = {
     },
     computed: {
         score: function() {
-            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (1 * this.score9 * this.scorel * this.scorew)
+            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * ( this.score9 + this.scorel + this.scorew - 2)
         }
     },
     methods: {
