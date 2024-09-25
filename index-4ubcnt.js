@@ -4219,7 +4219,7 @@ const zu = {
     },
     computed: {
         score: function() {
-            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (1 * ( this.score9 * this.scorel * this.scorew))
+            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (1 * this.score9 * this.scorel * this.scorew)
         }
     },
     methods: {
@@ -4285,8 +4285,8 @@ const zu = {
             this.$refs.jiesuan.jiesuan = 0,
             this.$refs.guiling.play(),
             this.$refs.sichou.sichou = ""
-            this.$refs.sichou.lantu = ""
-            this.$refs.sichou.wsde = ""
+            this.$refs.lantu.lantu = ""
+            this.$refs.wsde.wsde = ""
         }
     },
     components: {
@@ -4361,13 +4361,13 @@ function Mu(e, t, n, s, i, o) {
     }, null, 8, ["onSetjiesuan"]), Z(W, {
         onSetsichou: o.getsichou,
         ref: "sichou"
-    }, null, 8, ["onSetjiesuan"]), Z(l, {
-        onSetsichou: o.getlantu,
+    }, null, 8, ["onSetsichou"]), Z(l, {
+        onSetlantu: o.getlantu,
         ref: "lantu"
-    }, null, 8, ["onSetjiesuan"]), Z(b, {
-        onSetsichou: o.getwsde,
+    }, null, 8, ["onSetlantu"]), Z(b, {
+        onSetwsde: o.getwsde,
         ref: "wsde"
-    }, null, 8, ["onSetsichou"]), c("div", Pu, " 总分：" + T(o.score), 1), c("div", null, [c("button", {
+    }, null, 8, ["onSetwsde"]), c("div", Pu, " 总分：" + T(o.score), 1), c("div", null, [c("button", {
         class: "qingkong",
         onClick: t[0] || (t[0] = (...S) => o.empty && o.empty(...S))
     }, "归零"), c("audio", Iu, null, 512)])]), Uu])
