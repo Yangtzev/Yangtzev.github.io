@@ -36,7 +36,7 @@ a:hover {
     text-decoration: solid underline rgba(0,0,0,.5)
 }
 
-.part,.part2,.part3,.yuanshi,.jiesuan,.hide,.kangya,.lantu,.wsde {
+.part,.part2,.part3,.yuanshi,.jiesuan,.hide,.kangya {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
@@ -95,22 +95,6 @@ a:hover {
     left: 650px;
     top: 440px;
     width: 320px
-}
-
-.lantu {
-    position: absolute;
-    left: 650px;
-    top: 470px;
-    width: 320px;
-    height: 20px
-}
-
-.wsde {
-    position: absolute;
-    left: 650px;
-    top: 500px;
-    width: 320px;
-    height: 20px
 }
 
 .zongfen-wrapper {

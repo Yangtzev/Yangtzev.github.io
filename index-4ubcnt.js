@@ -4131,7 +4131,7 @@ const _u = Ee(bu, [["render", xu]])
     },
     computed: {
         sichouscore: function() {
-            return this.sichou ? this.sichoucount = 0.9 : this.sichoucount = 1,
+            return this.sichou ? this.sichoucount = -0.1 : this.sichoucount = 1,
             this.$emit("setsichou", this.sichoucount),
             this.sichoucount
         }
@@ -4146,7 +4146,7 @@ const _u = Ee(bu, [["render", xu]])
     },
     computed: {
         lantuscore: function() {
-            return this.lantu ? this.lantucount = 0.85 : this.lantucount = 1,
+            return this.lantu ? this.lantucount = -0.15 : this.lantucount = 1,
             this.$emit("setlantu", this.lantucount),
             this.lantucount
         }
@@ -4161,7 +4161,7 @@ const _u = Ee(bu, [["render", xu]])
     },
     computed: {
         wsdescore: function() {
-            return this.wsde ? this.wsdecount = 0.9 : this.wsdecount = 1,
+            return this.wsde ? this.wsdecount = -0.1 : this.wsdecount = 1,
             this.$emit("setwsde", this.wsdecount),
             this.wsdecount
         }
@@ -4181,21 +4181,21 @@ function Cu1(e, t, n, s, i, o) {
     Ce("div", wu, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.sichou = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.sichou]]), _("拥有死仇时代的恨意 " + T(o.sichouscore) + "倍分数 ", 0.9)])])
+    }, null, 512), [[oe, i.sichou]]), _("死仇时代的恨意 " + T(o.sichouscore) + "倍分数 ", -0.1)])])
 }
 function Cu2(e, t, n, s, i, o) {
     return we(),
     Ce("div", sb, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.lantu = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.lantu]]), _("蓝图测绘分队 " + T(o.lantuscore) + "倍分数 ", 0.85)])])
+    }, null, 512), [[oe, i.lantu]]), _("蓝图测绘分队 " + T(o.lantuscore) + "倍分数 ", -0.15)])])
 }
 function Cu3(e, t, n, s, i, o) {
     return we(),
     Ce("div", jb, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.wsde = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.wsde]]), _("抓取维什戴尔 " + T(o.lantuscore) + "倍分数 ", 0.9)])])
+    }, null, 512), [[oe, i.wsde]]), _("抓取维什戴尔 " + T(o.wsdescore) + "倍分数 ", -0.1)])])
 }
 const Eu = Ee(vu, [["render", Cu1]]);
 const ua = Ee(ub, [["render", Cu2]]);
@@ -4219,7 +4219,7 @@ const zu = {
     },
     computed: {
         score: function() {
-            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (this.score9 + this.scorel + this.scorew)
+            return (this.score1 + this.score2 + this.score3 + this.score4 + this.score5 + this.score6 + this.score7 + this.score8) * (1 + this.score9 + this.scorel + this.scorew)
         }
     },
     methods: {
