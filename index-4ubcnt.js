@@ -3607,7 +3607,7 @@ const El = Ee(bl, [["render", Cl]]);
 const zl = {
     data() {
         return {
-            jinjisco: [20, 25, 25, 40, 40, 30, 50, 30, 40, 60, 60, 80, 70],
+            jinjisco: [20, 25, 25, 40, 40, 30, 50, 30, 40, 60, 60, 80, 20],
             jinjifra: ["", "", "", "", "", "", "", "", "", "", "", "", ""],
             jinjicount: 0
         }
@@ -3918,7 +3918,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[35] || (t[35] = r => i.jinjifra[11] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 80), 1)])]), c("div", null, [_(" 时光凯旋无漏(70)"), c("span", $l, [c("button", {
+    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 80), 1)])]), c("div", null, [_(" 死仇刷出来的紧急(20)"), c("span", $l, [c("button", {
         class: "changecount",
         onClick: t[36] || (t[36] = (...r) => o.shenglingdezhongdianjian && o.shenglingdezhongdianjian(...r))
     }, "-"), c("span", eu, T(i.jinjifra[12]), 1), c("button", {
@@ -3929,14 +3929,14 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[38] || (t[38] = r => i.jinjifra[12] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * 70), 1)])])])
+    }, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * 20), 1)])])])
 }
 const nu = Ee(zl, [["render", tu]])
   , iu = {
     data() {
         return {
             speval: [0, 0, 0, 0],
-            spefen: [150, 120, 80, 100],
+            spefen: [150, 100, 80, 80],
             zhengyishizheval: 0,
             zhengyishizhefen: [0, 0, -40, -70, -120, 50],
             yingxiongcount: -1,
@@ -3970,13 +3970,13 @@ function uu(e, t, n, s, i, o) {
     }, null, 512), [[oe, i.speval[0]]]), _("不招募维什戴尔(150) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[1] || (t[1] = r => i.speval[1] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[1]]]), _("不招募逻各斯和塑心(120) ")]), c("div", null, [k(c("input", {
+    }, null, 512), [[oe, i.speval[1]]]), _("不招募逻各斯(100) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[2] || (t[2] = r => i.speval[2] = r),
         type: "checkbox"
     }, null, 512), [[oe, i.speval[2]]]), _("不招募阿斯卡纶(80) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[3] || (t[3] = r => i.speval[3] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[3]]]), _("全程没有树洞(100) ")]), c("div", null, [k(c("input", {
+    }, null, 512), [[oe, i.speval[3]]]), _("不招募凯尔希(80) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[4] || (t[4] = r => i.zhengyishizheval = r),
         type: "radio",
         name: "zhengyishizhe",
@@ -4131,7 +4131,7 @@ const _u = Ee(bu, [["render", xu]])
     },
     computed: {
         kangyascore: function() {
-            return this.kangya ? this.kangyacount = 0.8 : this.kangyacount = 1,
+            return this.kangya ? this.kangyacount = 0.9 : this.kangyacount = 1,
             this.$emit("setkangya", this.kangyacount),
             this.kangyacount
         }
