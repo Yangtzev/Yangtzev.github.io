@@ -4294,7 +4294,7 @@ function Mu(e, t, n, s, i, o) {
     }, null, 8, ["onSetjiesuan"]), Z(W, {
         onSetkangya: o.getkangya,
         ref: "kangya"
-    }, null, 8, ["onSetkangya"]), c("div", Pu, " 总分：" + T(o.score) + "！ ", 1), c("div", null, [c("button", {
+    }, null, 8, ["onSetkangya"]), c("div", Pu, " 总分：" + T(o.score), 1), c("div", null, [c("button", {
         class: "qingkong",
         onClick: t[0] || (t[0] = (...S) => o.empty && o.empty(...S))
     }, "归零"), c("audio", Iu, null, 512)])]), Uu])
