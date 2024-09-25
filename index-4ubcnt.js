@@ -3786,7 +3786,7 @@ const zl = {
 };
 function tu(e, t, n, s, i, o) {
     return we(),
-    Ce("div", Ol, [c("div", null, " 紧急作战得分:" + T(o.jinjiscore), 1), Tl, c("div", null, [_(" 有序清场(20)"), c("span", kl, [c("button", {
+    Ce("div", Ol, [c("div", null, " 紧急作战得分(有合并):" + T(o.jinjiscore), 1), Tl, c("div", null, [_(" 有序清场或排风口(20)"), c("span", kl, [c("button", {
         class: "changecount",
         onClick: t[0] || (t[0] = (...r) => o.binghaiyiyingjian && o.binghaiyiyingjian(...r))
     }, "-"), c("span", Pl, T(i.jinjifra[0]), 1), c("button", {
@@ -3830,7 +3830,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[11] || (t[11] = r => i.jinjifra[3] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[3]]]), _(T(i.jinjifra[3] * 40), 1)])]), c("div", null, [_(" 假想对冲(40)"), c("span", Vl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[3]]]), _(T(i.jinjifra[3] * 40), 1)])]), c("div", null, [_(" 假想对冲或现代战争(40)"), c("span", Vl, [c("button", {
         class: "changecount",
         onClick: t[12] || (t[12] = (...r) => o.tansuotidewuhoujian && o.tansuotidewuhoujian(...r))
     }, "-"), c("span", Rl, T(i.jinjifra[4]), 1), c("button", {
@@ -3841,7 +3841,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[14] || (t[14] = r => i.jinjifra[4] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[4]]]), _(T(i.jinjifra[4] * 40), 1)])]), c("div", null, [_(" 朽败考察(30)"), c("span", Nl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[4]]]), _(T(i.jinjifra[4] * 40), 1)])]), c("div", null, [_(" 朽败考察或幽灵城(30)"), c("span", Nl, [c("button", {
         class: "changecount",
         onClick: t[15] || (t[15] = (...r) => o.renzaowujian && o.renzaowujian(...r))
     }, "-"), c("span", Hl, T(i.jinjifra[5]), 1), c("button", {
