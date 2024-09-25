@@ -3936,7 +3936,7 @@ const nu = Ee(zl, [["render", tu]])
     data() {
         return {
             speval: [0, 0, 0, 0],
-            spefen: [150, 100, 80, 80],
+            spefen: [150, 100, 80, 50],
             zhengyishizheval: 0,
             zhengyishizhefen: [0, 0, -40, -70, -120, 50],
             yingxiongcount: -1,
@@ -3976,7 +3976,7 @@ function uu(e, t, n, s, i, o) {
     }, null, 512), [[oe, i.speval[2]]]), _("不招募阿斯卡纶(80) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[3] || (t[3] = r => i.speval[3] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[3]]]), _("不招募凯尔希(80) ")]), c("div", null, [k(c("input", {
+    }, null, 512), [[oe, i.speval[3]]]), _("不招募凯尔希(50) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[4] || (t[4] = r => i.zhengyishizheval = r),
         type: "radio",
         name: "zhengyishizhe",
@@ -4041,7 +4041,7 @@ function hu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.cangpincount = r),
         step: "1",
         min: "0",
-        max: "99"
+        max: "200"
     }, null, 512), [[H, i.cangpincount]]), _(T(i.cangpincount), 1)]), c("div", null, [_(" 藏品数量："), k(c("input", {
         class: "shuru",
         "onUpdate:modelValue": t[1] || (t[1] = r => i.cangpincount = r),
@@ -4052,7 +4052,7 @@ function hu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[2] || (t[2] = r => i.xuanyanbancount = r),
         step: "1",
         min: "0",
-        max: "99"
+        max: "200"
     }, null, 512), [[H, i.xuanyanbancount]]), _(T(i.xuanyanbancount), 1)]), c("div", null, [_(" 思绪数量："), k(c("input", {
         class: "shuru",
         "onUpdate:modelValue": t[3] || (t[3] = r => i.xuanyanbancount = r),
