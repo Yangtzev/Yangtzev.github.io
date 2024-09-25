@@ -4126,12 +4126,12 @@ const _u = Ee(bu, [["render", xu]])
     data() {
         return {
             sichou: "",
-            sichoucount: 1
+            sichoucount: 0
         }
     },
     computed: {
         sichouscore: function() {
-            return this.sichou ? this.sichoucount = -0.1 : this.sichoucount = 0,
+            return this.sichou ? this.sichoucount = -0.1 : this.sichoucount = 1,
             this.$emit("setsichou", this.sichoucount),
             this.sichoucount
         }
@@ -4141,12 +4141,12 @@ const _u = Ee(bu, [["render", xu]])
     data() {
         return {
             lantu: "",
-            lantucount: 1
+            lantucount: 0
         }
     },
     computed: {
         lantuscore: function() {
-            return this.lantu ? this.lantucount = -0.15 : this.lantucount = 0,
+            return this.lantu ? this.lantucount = -0.15 : this.lantucount = 1,
             this.$emit("setlantu", this.lantucount),
             this.lantucount
         }
@@ -4156,12 +4156,12 @@ const _u = Ee(bu, [["render", xu]])
     data() {
         return {
             wsde: "",
-            wsdecount: 1
+            wsdecount: 0
         }
     },
     computed: {
         wsdescore: function() {
-            return this.wsde ? this.wsdecount = -0.1 : this.wsdecount = 0,
+            return this.wsde ? this.wsdecount = -0.1 : this.wsdecount = 1,
             this.$emit("setwsde", this.wsdecount),
             this.wsdecount
         }
