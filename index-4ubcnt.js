@@ -4041,7 +4041,7 @@ function hu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.cangpincount = r),
         step: "1",
         min: "0",
-        max: "200"
+        max: "250"
     }, null, 512), [[H, i.cangpincount]]), _(T(i.cangpincount), 1)]), c("div", null, [_(" 藏品数量："), k(c("input", {
         class: "shuru",
         "onUpdate:modelValue": t[1] || (t[1] = r => i.cangpincount = r),
@@ -4052,7 +4052,7 @@ function hu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[2] || (t[2] = r => i.xuanyanbancount = r),
         step: "1",
         min: "0",
-        max: "200"
+        max: "300"
     }, null, 512), [[H, i.xuanyanbancount]]), _(T(i.xuanyanbancount), 1)]), c("div", null, [_(" 思绪数量："), k(c("input", {
         class: "shuru",
         "onUpdate:modelValue": t[3] || (t[3] = r => i.xuanyanbancount = r),
