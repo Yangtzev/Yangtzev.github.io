@@ -4319,7 +4319,7 @@ const zu = {
     ref: "guiling",
     src: "../public/归零.mp3"
 }
-  , Uu = Cr('<div><a href="https://docs.qq.com/form/page/DZWRKT0pPV01NbHZ2/">四邮杯#2报名</a>   <a href="https://docs.qq.com/form/page/DZWNDc0djVHJMQlBq">比赛赞助通道</a>   <a href="https://space.bilibili.com/526886747">直播与往期比赛回放B站@落桜残影Sakura_L</a>   <span style="color:rgba(0, 0, 0, .5);">版本:4UB#2</span>   <span style="color:rgba(0, 0, 0, .5);">更新时间：2024.9.25</span></div>', 1);
+  , Uu = Cr('<div><a href="https://github.com/Yangtzev/4ucounter.github.io">计算器开源页面</a>   <a href="https://docs.qq.com/form/page/DZWNDc0djVHJMQlBq">比赛赞助通道</a>   <a href="https://space.bilibili.com/526886747">直播与往期比赛回放B站@落桜残影Sakura_L</a>   <span style="color:rgba(0, 0, 0, .5);">版本:4UB#2</span>   <span style="color:rgba(0, 0, 0, .5);">更新时间：2024.9.25</span></div>', 1);
 function Mu(e, t, n, s, i, o) {
     const r = Oe("linshi")
       , u = Oe("jieju")
