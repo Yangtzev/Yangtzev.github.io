@@ -4046,7 +4046,7 @@ function hu(e, t, n, s, i, o) {
         class: "shuru",
         "onUpdate:modelValue": t[1] || (t[1] = r => i.cangpincount = r),
         type: "text",
-        maxlength: "2"
+        maxlength: "3"
     }, null, 512), [[H, i.cangpincount]])]), c("div", null, [_(" 思绪(1)"), k(c("input", {
         type: "range",
         "onUpdate:modelValue": t[2] || (t[2] = r => i.xuanyanbancount = r),
@@ -4057,7 +4057,7 @@ function hu(e, t, n, s, i, o) {
         class: "shuru",
         "onUpdate:modelValue": t[3] || (t[3] = r => i.xuanyanbancount = r),
         type: "text",
-        maxlength: "2"
+        maxlength: "3"
     }, null, 512), [[H, i.xuanyanbancount]])])])])
 }
 const du = Ee(fu, [["render", hu]])
