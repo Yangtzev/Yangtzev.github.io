@@ -3413,7 +3413,7 @@ const Ee = (e, t) => {
   , ll = {
     class: "part"
 }
-  , ul = c("div", null, " 临时招募(不计算铜印银印) ", -1)
+  , ul = c("div", null, " 临时招募 ", -1)
   , cl = {
     class: "but-count"
 }
@@ -3464,17 +3464,35 @@ const dl = Ee(rl, [["render", hl]])
   , pl = {
     data() {
         return {
-            jiejuval: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            jiejufen: [80, 150, 200, 250, 50, 100, 40, 30, 30, 1000]
+            jiejuval: Array(20).fill(0),
+            jiejufen: [
+            
+                40, // 紧急授课 - 基础
+                20, // 紧急授课 - 混乱再
+                100, // 朝谒 - 基础
+                50, // 朝谒 - 混乱再
+                300, // 授法 - 基础
+                150, // 授法 - 混乱再
+                150, // 授法 - 击杀奎隆再
+                220, // 不容拒绝一 - 基础
+                100, // 不容拒绝一 - 混乱再
+                100, // 不容拒绝一 - 无漏再
+                250, // 不容拒绝二 - 基础
+                120, // 不容拒绝二 - 混乱
+                120, // 不容拒绝二 - 无漏
+                320, // 不容拒绝三 - 基础
+                150, // 不容拒绝三 - 混乱
+                150, // 不容拒绝三 - 无漏
+            ]
         }
     },
     computed: {
         jiejuscore: function() {
             this.jiejucount = 0;
-            for (let e = 0; e < 10; e++)
-                this.jiejucount += this.jiejufen[e] * this.jiejuval[e];
-            return this.$emit("setjieju", this.jiejucount),
-            this.jiejucount
+            for (let e = 0; e < this.jiejufen.length; e++)
+                this.jiejucount += (this.jiejufen[e] || 0) * (this.jiejuval[e] || 0);
+            this.$emit("setjieju", this.jiejucount);
+            return this.jiejucount
         }
     }
 }
@@ -3483,37 +3501,26 @@ const dl = Ee(rl, [["render", hl]])
 };
 function jl(e, t, n, s, i, o) {
     return we(),
-    Ce("div", gl, [c("div", null, " 结局得分：" + T(o.jiejuscore), 1), c("form", null, [c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[0] || (t[0] = r => i.jiejuval[0] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[0]]]), _("一结局 (80) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[1] || (t[1] = r => i.jiejuval[1] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[1]]]), _("二结局(150) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[2] || (t[2] = r => i.jiejuval[2] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[2]]]), _("一三结局(200) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[3] || (t[3] = r => i.jiejuval[3] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[3]]]), _("二三结局(250) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[4] || (t[4] = r => i.jiejuval[4] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[4]]]), _("1个混乱BOSS(50) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[5] || (t[5] = r => i.jiejuval[5] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[5]]]), _("2个混乱BOSS(100) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[6] || (t[6] = r => i.jiejuval[6] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[6]]]), _("三层离歌的庭院(40) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[7] || (t[7] = r => i.jiejuval[7] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[7]]]), _("三层赴敌者(30) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[8] || (t[8] = r => i.jiejuval[8] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[8]]]), _("三层王冠之下(30) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[9] || (t[9] = r => i.jiejuval[9] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.jiejuval[9]]]), _("拥挤卫士(1000) ")])])])
+    Ce("div", gl, [c("div", null, " 结局得分：" + T(o.jiejuscore), 1), c("form", null, [
+
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[0] || (t[0] = r => i.jiejuval[0] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[0]]]), _("紧急授课 (+40) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[1] || (t[1] = r => i.jiejuval[1] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[1]]]), _("紧急授课混乱 (+20) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[2] || (t[2] = r => i.jiejuval[2] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[2]]]), _("朝谒 (+100) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[3] || (t[3] = r => i.jiejuval[3] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[3]]]), _("朝谒混乱 (+50) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[4] || (t[4] = r => i.jiejuval[4] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[4]]]), _("授法 (+300) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[5] || (t[5] = r => i.jiejuval[5] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[5]]]), _("授法混乱 (+150) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[6] || (t[6] = r => i.jiejuval[6] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[6]]]), _("授法击杀奎隆 (+150) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[7] || (t[7] = r => i.jiejuval[7] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[7]]]), _("不容拒绝一(+220) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[8] || (t[8] = r => i.jiejuval[8] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[18]]]), _("不容拒绝一混乱 (+100) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[9] || (t[9] = r => i.jiejuval[9] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[9]]]), _("不容拒绝一无漏 (+100) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[10] || (t[10] = r => i.jiejuval[10] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[10]]]), _("不容拒绝二 (+250) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[11] || (t[11] = r => i.jiejuval[11] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[11]]]), _("不容拒绝二混乱 (+120) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[12] || (t[12] = r => i.jiejuval[12] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[12]]]), _("不容拒绝二无漏 (+120) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[13] || (t[13] = r => i.jiejuval[13] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[13]]]), _("不容拒绝三 (+320) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[14] || (t[14] = r => i.jiejuval[14] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[14]]]), _("不容拒绝三混乱 (+150) ")]),
+        c("div", null, [k(c("input", {"onUpdate:modelValue": t[15] || (t[15] = r => i.jiejuval[15] = r),type: "checkbox"}, null, 512), [[oe, i.jiejuval[15]]]), _("不容拒绝三无漏 (+150) ")])
+        
+    ])])
 }
 const ml = Ee(pl, [["render", jl]])
   , bl = {
@@ -3522,12 +3529,13 @@ const ml = Ee(pl, [["render", jl]])
             dogcount: "",
             duckcount: "",
             bearcount: "",
+            mousecount: "",
             hidecount: 0
         }
     },
     computed: {
         hidescore: function() {
-            return this.hidecount = (this.dogcount * 1 + this.duckcount * 1 + this.bearcount * 1) * 20,
+            return this.hidecount = (this.dogcount * 1 + this.duckcount * 1 + this.bearcount * 1 + this.mousecount * 1) * 20,
             this.$emit("sethide", this.hidecount),
             this.hidecount
         }
@@ -3550,6 +3558,12 @@ const ml = Ee(pl, [["render", jl]])
         },
         bearcountjian: function() {
             this.bearcount <= 0 ? this.bearcount = 0 : this.bearcount = this.bearcount * 1 - 1
+        },
+        mousecountjia: function() {
+            this.mousecount = this.mousecount * 1 + 1
+        },
+        mousecountjian: function() {
+            this.mousecount <= 0 ? this.mousecount = 0 : this.mousecount = this.mousecount * 1 - 1
         }
     }
 }
@@ -3568,7 +3582,9 @@ const ml = Ee(pl, [["render", jl]])
 };
 function Cl(e, t, n, s, i, o) {
     return we(),
-    Ce("div", yl, [c("div", null, " 动物得分(每个20)：" + T(o.hidescore), 1), xl, c("div", null, [_(" 狗(20)"), c("button", {
+    Ce("div", yl, [c("div", null, " 动物得分(每个20)：" + T(o.hidescore), 1), xl, 
+        
+    c("div", null, [_(" 狗(20)"), c("button", {
         class: "changecounthide",
         onClick: t[0] || (t[0] = (...r) => o.dogcountjian && o.dogcountjian(...r))
     }, "-"), c("span", _l, T(i.dogcount), 1), c("button", {
@@ -3579,7 +3595,9 @@ function Cl(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[2] || (t[2] = r => i.dogcount = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.dogcount]]), _(T(i.dogcount * 20), 1)]), c("div", null, [_(" 鸭(20)"), c("button", {
+    }, null, 512), [[H, i.dogcount]]), _(T(i.dogcount * 20), 1)]), 
+    
+    c("div", null, [_(" 鸭(20)"), c("button", {
         class: "changecounthide",
         onClick: t[3] || (t[3] = (...r) => o.duckcountjian && o.duckcountjian(...r))
     }, "-"), c("span", vl, T(i.duckcount), 1), c("button", {
@@ -3590,7 +3608,9 @@ function Cl(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[5] || (t[5] = r => i.duckcount = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.duckcount]]), _(T(i.duckcount * 20), 1)]), c("div", null, [_(" 熊或鼠(20)"), c("button", {
+    }, null, 512), [[H, i.duckcount]]), _(T(i.duckcount * 20), 1)]), 
+    
+    c("div", null, [_(" 熊(20)"), c("button", {
         class: "changecounthide",
         onClick: t[6] || (t[6] = (...r) => o.bearcountjian && o.bearcountjian(...r))
     }, "-"), c("span", wl, T(i.bearcount), 1), c("button", {
@@ -3601,13 +3621,27 @@ function Cl(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[8] || (t[8] = r => i.bearcount = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.bearcount]]), _(T(i.bearcount * 20), 1)])])
+    }, null, 512), [[H, i.bearcount]]), _(T(i.bearcount * 20), 1)]),
+
+    c("div", null, [_(" 鼠(20)"), c("button", {
+        class: "changecounthide",
+        onClick: t[9] || (t[9] = (...r) => o.mousecountjian && o.mousecountjian(...r))
+    }, "-"), c("span", wl, T(i.mousecount), 1), c("button", {
+        class: "changecounthide",
+        onClick: t[10] || (t[10] = (...r) => o.mousecountjia && o.mousecountjia(...r))
+    }, "+"), k(c("input", {
+        class: "shuru1",
+        "onUpdate:modelValue": t[11] || (t[11] = r => i.mousecount = r),
+        type: "text",
+        maxlength: "2"
+    }, null, 512), [[H, i.mousecount]]), _(T(i.mousecount * 20), 1)])])
+    
 }
 const El = Ee(bl, [["render", Cl]]);
 const zl = {
     data() {
         return {
-            jinjisco: [20, 25, 25, 40, 40, 30, 50, 30, 40, 60, 90, 80, 20],
+            jinjisco: [20, 60, 40, 60, 80, 80, 60, 50, 50, 70, 100, 20, 0],
             jinjifra: ["", "", "", "", "", "", "", "", "", "", "", "", ""],
             jinjicount: 0
         }
@@ -3615,8 +3649,8 @@ const zl = {
     computed: {
         jinjiscore: function() {
             this.jinjicount = 0;
-            for (let e = 0; e < 13; e++)
-                this.jinjicount += this.jinjifra[e] * 1 * this.jinjisco[e];
+            for (let e = 0; e < this.jinjisco.length; e++)
+                this.jinjicount += (this.jinjifra[e] * 1 || 0) * (this.jinjisco[e] || 0);
             return this.$emit("setjinji", this.jinjicount),
             this.jinjicount
         }
@@ -3705,7 +3739,7 @@ const zl = {
   , Ol = {
     class: "part2"
 }
-  , Tl = c("div", null, " 只有无漏紧急才加分，拱门跳过的不加分 ", -1)
+  , Tl = c("div", null, " 只有无漏作战才加分，拱门跳过的不加分 ", -1)
   , kl = {
     class: "jinjidefen"
 }
@@ -3786,7 +3820,7 @@ const zl = {
 };
 function tu(e, t, n, s, i, o) {
     return we(),
-    Ce("div", Ol, [c("div", null, " 紧急作战得分(有合并):" + T(o.jinjiscore), 1), Tl, c("div", null, [_(" 有序清场或排风口(20)"), c("span", kl, [c("button", {
+    Ce("div", Ol, [c("div", null, " 紧急作战得分:" + T(o.jinjiscore), 1), Tl, c("div", null, [_(" 猩红甬道(20)"), c("span", kl, [c("button", {
         class: "changecount",
         onClick: t[0] || (t[0] = (...r) => o.binghaiyiyingjian && o.binghaiyiyingjian(...r))
     }, "-"), c("span", Pl, T(i.jinjifra[0]), 1), c("button", {
@@ -3797,7 +3831,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[2] || (t[2] = r => i.jinjifra[0] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[0]]]), _(T(i.jinjifra[0] * 20), 1)])]), c("div", null, [_(" 大棋一盘(25)"), c("span", Il, [c("button", {
+    }, null, 512), [[H, i.jinjifra[0]]]), _(T(i.jinjifra[0] * 20), 1)])]), c("div", null, [_(" 争议频发(60)"), c("span", Il, [c("button", {
         class: "changecount",
         onClick: t[3] || (t[3] = (...r) => o.luwangbinghaiyiyingjian && o.luwangbinghaiyiyingjian(...r))
     }, "-"), c("span", Ul, T(i.jinjifra[1]), 1), c("button", {
@@ -3808,7 +3842,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[5] || (t[5] = r => i.jinjifra[1] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[1]]]), _(T(i.jinjifra[1] * 25), 1)])]), c("div", null, [_(" 溃乱魔典(25)"), c("span", Ml, [c("button", {
+    }, null, 512), [[H, i.jinjifra[1]]]), _(T(i.jinjifra[1] * 60), 1)])]), c("div", null, [_(" 混沌(40)"), c("span", Ml, [c("button", {
         class: "changecount",
         onClick: t[6] || (t[6] = (...r) => o.gongsijiugejian && o.gongsijiugejian(...r))
     }, "-"), c("span", Al, T(i.jinjifra[2]), 1), c("button", {
@@ -3819,7 +3853,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[8] || (t[8] = r => i.jinjifra[2] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[2]]]), _(T(i.jinjifra[2] * 25), 1)])]), c("div", null, [_(" 年代断层+全收刺(40)"), c("span", Fl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[2]]]), _(T(i.jinjifra[2] * 40), 1)])]), c("div", null, [_(" 神出鬼没(60)"), c("span", Fl, [c("button", {
         class: "changecount",
         onClick: t[9] || (t[9] = (...r) => o.luwanggongsijiugejian && o.luwanggongsijiugejian(...r))
     }, "-"), c("span", Sl, T(i.jinjifra[3]), 1), c("button", {
@@ -3830,7 +3864,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[11] || (t[11] = r => i.jinjifra[3] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[3]]]), _(T(i.jinjifra[3] * 40), 1)])]), c("div", null, [_(" 假想对冲或现代战争(40)"), c("span", Vl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[3]]]), _(T(i.jinjifra[3] * 60), 1)])]), c("div", null, [_(" 建制(80)"), c("span", Vl, [c("button", {
         class: "changecount",
         onClick: t[12] || (t[12] = (...r) => o.tansuotidewuhoujian && o.tansuotidewuhoujian(...r))
     }, "-"), c("span", Rl, T(i.jinjifra[4]), 1), c("button", {
@@ -3841,7 +3875,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[14] || (t[14] = r => i.jinjifra[4] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[4]]]), _(T(i.jinjifra[4] * 40), 1)])]), c("div", null, [_(" 朽败考察或幽灵城(30)"), c("span", Nl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[4]]]), _(T(i.jinjifra[4] * 80), 1)])]), c("div", null, [_(" 莱茵卫士(80)"), c("span", Nl, [c("button", {
         class: "changecount",
         onClick: t[15] || (t[15] = (...r) => o.renzaowujian && o.renzaowujian(...r))
     }, "-"), c("span", Hl, T(i.jinjifra[5]), 1), c("button", {
@@ -3852,7 +3886,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[17] || (t[17] = r => i.jinjifra[5] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[5]]]), _(T(i.jinjifra[5] * 30), 1)])]), c("div", null, [_(" 猩红甬道(50)"), c("span", Bl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[5]]]), _(T(i.jinjifra[5] * 80), 1)])]), c("div", null, [_(" 计划耕种(60)"), c("span", Bl, [c("button", {
         class: "changecount",
         onClick: t[18] || (t[18] = (...r) => o.luwangrenzaowujian && o.luwangrenzaowujian(...r))
     }, "-"), c("span", Kl, T(i.jinjifra[6]), 1), c("button", {
@@ -3863,7 +3897,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[20] || (t[20] = r => i.jinjifra[6] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[6]]]), _(T(i.jinjifra[6] * 50), 1)])]), c("div", null, [_(" 通道封锁(30)"), c("span", Ll, [c("button", {
+    }, null, 512), [[H, i.jinjifra[6]]]), _(T(i.jinjifra[6] * 60), 1)])]), c("div", null, [_(" 谋求共识(50)"), c("span", Ll, [c("button", {
         class: "changecount",
         onClick: t[21] || (t[21] = (...r) => o.bennengwuranjian && o.bennengwuranjian(...r))
     }, "-"), c("span", Dl, T(i.jinjifra[7]), 1), c("button", {
@@ -3874,7 +3908,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[23] || (t[23] = r => i.jinjifra[7] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[7]]]), _(T(i.jinjifra[7] * 30), 1)])]), c("div", null, [_(" 寄人城池下(40)"), c("span", Wl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[7]]]), _(T(i.jinjifra[7] * 50), 1)])]), c("div", null, [_(" 神圣的渴求(50)"), c("span", Wl, [c("button", {
         class: "changecount",
         onClick: t[24] || (t[24] = (...r) => o.wangzhexingjunjian && o.wangzhexingjunjian(...r))
     }, "-"), c("span", ql, T(i.jinjifra[8]), 1), c("button", {
@@ -3885,7 +3919,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[26] || (t[26] = r => i.jinjifra[8] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[8]]]), _(T(i.jinjifra[8] * 40), 1)])]), c("div", null, [_(" 计划耕种(60)"), c("span", Jl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[8]]]), _(T(i.jinjifra[8] * 50), 1)])]), c("div", null, [_(" 外道(70)"), c("span", Jl, [c("button", {
         class: "changecount",
         onClick: t[27] || (t[27] = (...r) => o.luwangwangzhexingjunjian && o.luwangwangzhexingjunjian(...r))
     }, "-"), c("span", Yl, T(i.jinjifra[9]), 1), c("button", {
@@ -3896,7 +3930,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[29] || (t[29] = r => i.jinjifra[9] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[9]]]), _(T(i.jinjifra[9] * 60), 1)])]), c("div", null, [_(" 谋求共识(90)"), c("span", Xl, [c("button", {
+    }, null, 512), [[H, i.jinjifra[9]]]), _(T(i.jinjifra[9] * 70), 1)])]), c("div", null, [_(" 洞天福地(100)"), c("span", Xl, [c("button", {
         class: "changecount",
         onClick: t[30] || (t[30] = (...r) => o.yuelizhizaijian && o.yuelizhizaijian(...r))
     }, "-"), c("span", Zl, T(i.jinjifra[10]), 1), c("button", {
@@ -3907,7 +3941,7 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[32] || (t[32] = r => i.jinjifra[10] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[10]]]), _(T(i.jinjifra[10] * 90), 1)])]), c("div", null, [_(" 神圣的渴求(80)"), c("span", Ql, [c("button", {
+    }, null, 512), [[H, i.jinjifra[10]]]), _(T(i.jinjifra[10] * 100), 1)])]), c("div", null, [_(" 卡兹瀑布(20)"), c("span", Ql, [c("button", {
         class: "changecount",
         onClick: t[33] || (t[33] = (...r) => o.luwangyuelizhizaijian && o.luwangyuelizhizaijian(...r))
     }, "-"), c("span", Gl, T(i.jinjifra[11]), 1), c("button", {
@@ -3918,29 +3952,18 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[35] || (t[35] = r => i.jinjifra[11] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 80), 1)])]), c("div", null, [_(" 死仇刷出来的紧急(20)"), c("span", $l, [c("button", {
-        class: "changecount",
-        onClick: t[36] || (t[36] = (...r) => o.shenglingdezhongdianjian && o.shenglingdezhongdianjian(...r))
-    }, "-"), c("span", eu, T(i.jinjifra[12]), 1), c("button", {
-        class: "changecount",
-        onClick: t[37] || (t[37] = (...r) => o.shenglingdezhongdianjia && o.shenglingdezhongdianjia(...r))
-    }, "+"), k(c("input", {
-        class: "shuru1",
-        "onUpdate:modelValue": t[38] || (t[38] = r => i.jinjifra[12] = r),
-        type: "text",
-        maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * 20), 1)])])])
+    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 0), 1)])])])
 }
 const nu = Ee(zl, [["render", tu]])
   , iu = {
     data() {
         return {
             speval: [0, 0, 0, 0],
-            spefen: [1, 100, 80, 50],
+            spefen: [40, 40, 40, 0],
             zhengyishizheval: 0,
             zhengyishizhefen: [0, 0, -40, -70, -120, 50],
             yingxiongcount: -1,
-            yingxiongwumingfen: [0, 30, 60, 120],
+            yingxiongwumingfen: [0, 150, 300, 450],
             specount: 0
         }
     },
@@ -3959,54 +3982,21 @@ const nu = Ee(zl, [["render", tu]])
   , su = {
     class: "part3"
 }
-  , ou = c("div", null, " 继承，鸭本，修女每个30分 ", -1)
-  , ru = c("div", null, " 全遇到+120分 ", -1)
-  , lu = c("div", null, " 临时招募ban位但不携带也可加分 ", -1);
+  , ou = c("div", null, "  ", -1)
+  , ru = c("div", null, "  ", -1)
+  , lu = c("div", null, "  ", -1);
 function uu(e, t, n, s, i, o) {
     return we(),
-    Ce("div", su, [_(" 特殊关卡和ban人得分：" + T(o.spescore) + " ", 1), c("div", null, [c("form", null, [c("div", null, [c("div", null, [k(c("input", {
+    Ce("div", su, [_(" 特殊关卡得分：" + T(o.spescore) + " ", 1), c("div", null, [c("form", null, [c("div", null, [c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[0] || (t[0] = r => i.speval[0] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[0]]]), _("全程不取钱(1) ")]), c("div", null, [k(c("input", {
+    }, null, 512), [[oe, i.speval[0]]]), _("离歌的庭院(40) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[1] || (t[1] = r => i.speval[1] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[1]]]), _("不招募逻各斯(100) ")]), c("div", null, [k(c("input", {
+    }, null, 512), [[oe, i.speval[1]]]), _("赴敌者(40) ")]), c("div", null, [k(c("input", {
         "onUpdate:modelValue": t[2] || (t[2] = r => i.speval[2] = r),
         type: "checkbox"
-    }, null, 512), [[oe, i.speval[2]]]), _("不招募阿斯卡纶(80) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[3] || (t[3] = r => i.speval[3] = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.speval[3]]]), _("不招募凯尔希(50) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[4] || (t[4] = r => i.zhengyishizheval = r),
-        type: "radio",
-        name: "zhengyishizhe",
-        value: "0"
-    }, null, 512), [[$e, i.zhengyishizheval]]), _("你看见我的冠了吗(0) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[5] || (t[5] = r => i.zhengyishizheval = r),
-        type: "radio",
-        name: "zhengyishizhe",
-        value: "1"
-    }, null, 512), [[$e, i.zhengyishizheval]]), _("泰拉之王拿1(0) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[6] || (t[6] = r => i.zhengyishizheval = r),
-        type: "radio",
-        name: "zhengyishizhe",
-        value: "2"
-    }, null, 512), [[$e, i.zhengyishizheval]]), _("泰拉之王拿2(-40) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[7] || (t[7] = r => i.zhengyishizheval = r),
-        type: "radio",
-        name: "zhengyishizhe",
-        value: "3"
-    }, null, 512), [[$e, i.zhengyishizheval]]), _("泰拉之王拿3(-70) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[8] || (t[8] = r => i.zhengyishizheval = r),
-        type: "radio",
-        name: "zhengyishizhe",
-        value: "4"
-    }, null, 512), [[$e, i.zhengyishizheval]]), _("泰拉之王拿4(-120) ")]), c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[9] || (t[9] = r => i.zhengyishizheval = r),
-        type: "radio",
-        name: "zhengyishizhe",
-        value: "5"
-    }, null, 512), [[$e, i.zhengyishizheval]]), _("全程没有国王套maybe分(50) ")]), c("div", null, [_(" 特殊关卡数"), k(c("input", {
+    }, null, 512), [[oe, i.speval[2]]]), _("王冠之下(40) ")]),  c("div", null, [_(" 滚动先祖BOSS数"), k(c("input", {
         type: "range",
         "onUpdate:modelValue": t[10] || (t[10] = r => i.yingxiongcount = r),
         step: "1",
@@ -4025,18 +4015,18 @@ const cu = Ee(iu, [["render", uu]])
     },
     computed: {
         cangpinscore: function() {
-            return this.cangpinfen = this.xuanyanbancount * 1 + this.cangpincount * 10,
+            return this.cangpinfen = this.xuanyanbancount * 1 + this.cangpincount * 5,
             this.$emit("setcangpin", this.cangpinfen),
             this.cangpinfen
         }
     }
 }
   , au = {
-    class: "part"
+    class: "part4"
 };
 function hu(e, t, n, s, i, o) {
     return we(),
-    Ce("div", au, [c("div", null, " 藏品思绪得分：" + T(o.cangpinscore), 1), c("form", null, [c("div", null, [_(" 藏品(10)"), k(c("input", {
+    Ce("div", au, [c("div", null, " 藏品思绪得分：" + T(o.cangpinscore), 1), c("form", null, [c("div", null, [_(" 藏品(5)"), k(c("input", {
         type: "range",
         "onUpdate:modelValue": t[0] || (t[0] = r => i.cangpincount = r),
         step: "1",
@@ -4066,15 +4056,19 @@ const du = Ee(fu, [["render", hu]])
         return {
             start: "",
             end: "",
+            yuanshidinlimit: "", // 新增：上限可手动输入，默认60
             yuanshidincount: 0
         }
     },
     computed: {
         yuanshidinscore: function() {
-            return this.yuanshidincount = 0,
-            this.start - this.end > 60 && (this.yuanshidincount = (this.start - this.end - 60) * -50),
-            this.$emit("setyuanshidin", this.yuanshidincount),
-            this.yuanshidincount
+            this.yuanshidincount = 0;
+            let limit = this.yuanshidinlimit * 1 || 0;
+            if (this.start - this.end > limit) {
+                this.yuanshidincount = (this.start - this.end - limit) * -50;
+            }
+            this.$emit("setyuanshidin", this.yuanshidincount);
+            return this.yuanshidincount;
         }
     }
 }
@@ -4083,15 +4077,36 @@ const du = Ee(fu, [["render", hu]])
 };
 function ju(e, t, n, s, i, o) {
     return we(),
-    Ce("div", gu, [c("form", null, [c("div", null, [_(" 开始前源石锭数"), k(c("input", {
-        class: "shuru",
-        "onUpdate:modelValue": t[0] || (t[0] = r => i.start = r),
-        type: "text"
-    }, null, 512), [[H, i.start]]), _(" 取钱超过60点,每超1点扣50分 ")]), c("div", null, [_(" 结束后源石锭数"), k(c("input", {
-        class: "shuru",
-        "onUpdate:modelValue": t[1] || (t[1] = r => i.end = r),
-        type: "text"
-    }, null, 512), [[H, i.end]]), _(" 得分：" + T(this.yuanshidinscore), 1)])])])
+    Ce("div", gu, [c("form", null, [
+        c("div", null, [
+            _(" 队员2取钱上限："),
+            k(c("input", {
+                class: "shuru",
+                style: { width: '60px', marginLeft: '8px', marginRight: '8px' },
+                "onUpdate:modelValue": t[2] || (t[2] = r => i.yuanshidinlimit = r),
+                type: "text"
+            }, null, 512), [[H, i.yuanshidinlimit]]),
+
+        ]),
+        c("div", null, [
+            _(" 开始前源石锭数："),
+            k(c("input", {
+                class: "shuru",
+                "onUpdate:modelValue": t[0] || (t[0] = r => i.start = r),
+                type: "text"
+            }, null, 512), [[H, i.start]])
+        ]),
+        c("div", null, [
+            _(" 结束后源石锭数："),
+            k(c("input", {
+                class: "shuru",
+                "onUpdate:modelValue": t[1] || (t[1] = r => i.end = r),
+                type: "text"
+            }, null, 512), [[H, i.end]]),
+            _(" 源石锭分：" + T(this.yuanshidinscore), 1)
+        ])
+        
+    ])])
 }
 const mu = Ee(pu, [["render", ju]])
   , bu = {
@@ -4176,30 +4191,7 @@ const _u = Ee(bu, [["render", xu]])
   , jb = {
     class: "wsde"
 };
-function Cu1(e, t, n, s, i, o) {
-    return we(),
-    Ce("div", wu, [c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[0] || (t[0] = r => i.sichou = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.sichou]]), _("死仇时代的恨意 " + T(o.sichouscore) + "倍分数 ", 0.9)])])
-}
-function Cu2(e, t, n, s, i, o) {
-    return we(),
-    Ce("div", sb, [c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[0] || (t[0] = r => i.lantu = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.lantu]]), _("蓝图测绘分队 " + T(o.lantuscore) + "倍分数 ", 0.85)])])
-}
-function Cu3(e, t, n, s, i, o) {
-    return we(),
-    Ce("div", jb, [c("div", null, [k(c("input", {
-        "onUpdate:modelValue": t[0] || (t[0] = r => i.wsde = r),
-        type: "checkbox"
-    }, null, 512), [[oe, i.wsde]]), _("招募维什戴尔 " + T(o.wsdescore) + "倍分数 ", 0.9)])])
-}
-const Eu = Ee(vu, [["render", Cu1]]);
-const ua = Ee(ub, [["render", Cu2]]);
-const wa = Ee(uc, [["render", Cu3]]);
+
 
 const zu = {
     data() {
@@ -4257,36 +4249,65 @@ const zu = {
             this.scorew = e
         },
         empty: function() {
-            this.score = 0,
-            this.$refs.linshi.sixcount = "",
-            this.$refs.linshi.fivecount = "",
-            this.$refs.linshi.fourcount = "";
-            for (let e = 0; e < 10; e++)
-                this.$refs.jieju.jiejuval[e] = 0;
-            this.$refs.hide.dogcount = "",
-            this.$refs.hide.duckcount = "",
-            this.$refs.hide.bearcount = "",
-            this.$refs.jinji.jinjicount = 0;
-            for (let e = 0; e < 13; e++)
-                this.$refs.jinji.jinjifra[e] = "";
-            for (let e = 0; e < 4; e++)
-                this.$refs.spe.speval[e] = 0;
-            this.$refs.spe.zhengyishizheval = 0,
-            this.$refs.spe.yingxiongcount = -1,
-            this.$refs.spe.specount = 0,
-            this.$refs.cangpin.cangpincount = 0,
-            this.$refs.cangpin.xuanyanbancount = 0,
-            this.$refs.cangpin.cangpinfen = 0,
-            this.$refs.yuanshidin.start = "",
-            this.$refs.yuanshidin.end = "",
-            this.$refs.yuanshidin.yuanshidincount = 0,
-            this.$refs.jiesuan.jiesuancount = "",
-            this.$refs.jiesuan.xiuzhengcount = "",
-            this.$refs.jiesuan.jiesuan = 0,
-            this.$refs.guiling.play(),
-            this.$refs.sichou.sichou = ""
-            this.$refs.lantu.lantu = ""
-            this.$refs.wsde.wsde = ""
+            this.score1 = 0;
+            this.score2 = 0;
+            this.score3 = 0;
+            this.score4 = 0;
+            this.score5 = 0;
+            this.score6 = 0;
+            this.score7 = 0;
+            this.score8 = 0;
+            this.score9 = 1;
+            this.scorel = 1;
+            this.scorew = 1;
+            if (this.$refs.linshi) {
+                this.$refs.linshi.sixcount = "";
+                this.$refs.linshi.fivecount = "";
+                this.$refs.linshi.fourcount = "";
+            }
+            if (this.$refs.jieju && Array.isArray(this.$refs.jieju.jiejuval)) {
+                for (let e = 0; e < this.$refs.jieju.jiejuval.length; e++)
+                    this.$refs.jieju.jiejuval[e] = 0;
+            }
+            if (this.$refs.hide) {
+                this.$refs.hide.dogcount = "";
+                this.$refs.hide.duckcount = "";
+                this.$refs.hide.bearcount = "";
+                this.$refs.hide.mousecount = "";
+            }
+            if (this.$refs.jinji) {
+                this.$refs.jinji.jinjicount = 0;
+                if (Array.isArray(this.$refs.jinji.jinjifra))
+                    for (let e = 0; e < this.$refs.jinji.jinjifra.length; e++)
+                        this.$refs.jinji.jinjifra[e] = "";
+            }
+            if (this.$refs.spe) {
+                if (Array.isArray(this.$refs.spe.speval))
+                    for (let e = 0; e < this.$refs.spe.speval.length; e++)
+                        this.$refs.spe.speval[e] = 0;
+                this.$refs.spe.zhengyishizheval = 0;
+                this.$refs.spe.yingxiongcount = -1;
+                this.$refs.spe.specount = 0;
+            }
+            if (this.$refs.cangpin) {
+                this.$refs.cangpin.cangpincount = 0;
+                this.$refs.cangpin.xuanyanbancount = 0;
+                this.$refs.cangpin.cangpinfen = 0;
+            }
+            if (this.$refs.yuanshidin) {
+                this.$refs.yuanshidin.start = "";
+                this.$refs.yuanshidin.end = "";
+                this.$refs.yuanshidin.yuanshidincount = 0;
+            }
+            if (this.$refs.jiesuan) {
+                this.$refs.jiesuan.jiesuancount = "";
+                this.$refs.jiesuan.xiuzhengcount = "";
+                this.$refs.jiesuan.jiesuan = 0;
+            }
+            if (this.$refs.guiling) this.$refs.guiling.play();
+            if (this.$refs.sichou) this.$refs.sichou.sichou = "";
+            if (this.$refs.lantu) this.$refs.lantu.lantu = "";
+            if (this.$refs.wsde) this.$refs.wsde.wsde = "";
         }
     },
     components: {
@@ -4298,9 +4319,7 @@ const zu = {
         cangpin: du,
         yuanshidin: mu,
         jiesuan: _u,
-        sichou: Eu,
-        lantu: ua,
-        wsde: wa
+ 
     }
 }
   , Ou = {
@@ -4319,7 +4338,7 @@ const zu = {
     ref: "guiling",
     src: "../public/归零.mp3"
 }
-  , Uu = Cr('<div><a href="https://github.com/Yangtzev/4ucounter.github.io">计算器开源页面</a>   <a href="https://docs.qq.com/form/page/DZWNDc0djVHJMQlBq">比赛赞助通道</a>   <a href="https://space.bilibili.com/526886747">直播与往期比赛回放B站@落桜残影Sakura_L</a>   <span style="color:rgba(0, 0, 0, .5);">版本:4UB#2</span>   <span style="color:rgba(0, 0, 0, .5);">更新时间：2024.9.25</span></div>', 1);
+  , Uu = Cr('<div><a href="https://github.com/Yangtzev/4ucounter.github.io">计算器开源页面</a>   <a href="https://docs.qq.com/form/page/DZWNDc0djVHJMQlBq">比赛赞助通道</a>   <a href="https://space.bilibili.com/526886747">直播与往期比赛回放B站@落桜残影Sakura_L</a>   <span style="color:rgba(0, 0, 0, .5);">版本:4UB#3</span>   <span style="color:rgba(0, 0, 0, .5);">更新时间：2025.12.28</span></div>', 1);
 function Mu(e, t, n, s, i, o) {
     const r = Oe("linshi")
       , u = Oe("jieju")
