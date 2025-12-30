@@ -3641,7 +3641,7 @@ const El = Ee(bl, [["render", Cl]]);
 const zl = {
     data() {
         return {
-            jinjisco: [20, 60, 40, 60, 80, 80, 60, 50, 50, 70, 100, 20, 0],
+            jinjisco: [20, 60, 40, 60, 80, 80, 60, 50, 50, 70, 100, 20, -300],
             jinjifra: ["", "", "", "", "", "", "", "", "", "", "", "", ""],
             jinjicount: 0
         }
@@ -3930,20 +3930,20 @@ function tu(e, t, n, s, i, o) {
         "onUpdate:modelValue": t[35] || (t[35] = r => i.jinjifra[11] = r),
         type: "text",
         maxlength: "2"
-    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 20), 1)])])])
+    }, null, 512), [[H, i.jinjifra[11]]]), _(T(i.jinjifra[11] * 20), 1)])])
 
-    //, c("div", null, [_(" 机动队(30)"), c("span", $l, [c("button", {
-    //    class: "changecount",
-    //    onClick: t[36] || (t[36] = (...r) => o.shenglingdezhongdianjian && o.shenglingdezhongdianjian(...r))
-    //}, "-"), c("span", eu, T(i.jinjifra[12]), 1), c("button", {
-    //    class: "changecount",
-    //    onClick: t[37] || (t[37] = (...r) => o.shenglingdezhongdianjia && o.shenglingdezhongdianjia(...r))
-    //}, "+"), k(c("input", {
-    //    class: "shuru1",
-    //    "onUpdate:modelValue": t[38] || (t[38] = r => i.jinjifra[12] = r),
-    //    type: "text",
-    //    maxlength: "2"
-    //}, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * 30), 1)])])])
+    , c("div", null, [_(" 队友招募重复六星(-300)"), c("span", $l, [c("button", {
+        class: "changecount",
+        onClick: t[36] || (t[36] = (...r) => o.shenglingdezhongdianjian && o.shenglingdezhongdianjian(...r))
+    }, "-"), c("span", eu, T(i.jinjifra[12]), 1), c("button", {
+        class: "changecount",
+        onClick: t[37] || (t[37] = (...r) => o.shenglingdezhongdianjia && o.shenglingdezhongdianjia(...r))
+    }, "+"), k(c("input", {
+        class: "shuru1",
+        "onUpdate:modelValue": t[38] || (t[38] = r => i.jinjifra[12] = r),
+        type: "text",
+        maxlength: "2"
+    }, null, 512), [[H, i.jinjifra[12]]]), _(T(i.jinjifra[12] * -300), 1)])])])
 }
 const nu = Ee(zl, [["render", tu]])
   , iu = {
@@ -4298,10 +4298,9 @@ const zu = {
     src: "../public/归零.mp3"
 }
   , Uu = Cr('<div><a href="https://github.com/Yangtzev/4ucounter.github.io">计算器开源页面</a>\
-        <a href="https://docs.qq.com/form/page/DZWNDc0djVHJMQlBq">                       </a>\
         <a href="https://space.bilibili.com/526886747">直播与往期比赛回放B站@落桜残影Sakura_L</a>\
         <span style="color:rgba(0, 0, 0, .5);">版本:4UB#3</span> \
-        <span style="color:rgba(0, 0, 0, .5);">更新时间：2025.12.28</span></div>', 1);
+        <span style="color:rgba(0, 0, 0, .5);">更新时间：2025.12.30</span></div>', 1);
 function Mu(e, t, n, s, i, o) {
     const r = Oe("linshi")
       , u = Oe("jieju")

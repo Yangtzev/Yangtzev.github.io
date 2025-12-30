@@ -56,15 +56,15 @@ a:hover {
 
 .part3 {
     position: absolute;
-    left: 650px;
-    top: 0;
-    width: 320px
+    left: 250px;
+    top: 450px;
+    width: 380px
 }
 
 .part4 {
     position: absolute;
     left: 650px;
-    top: 160px;
+    top: 0px;
     width: 320px;
     border: 1px solid black;
     margin: 10px
@@ -80,30 +80,30 @@ a:hover {
 
 .yuanshi {
     position: absolute;
-    left: 650px;
-    top: 332px;
-    width: 320px
+    left: 250px;
+    top: 333px;
+    width: 380px
 }
 
 .hide {
     position: absolute;
-    left: 250px;
-    top: 332px;
-    width: 380px
+    left: 650px;
+    top: 157px;
+    width: 320px
 }
 
 .jiesuan {
     position: absolute;
-    left: 250px;
-    top: 547px;
-    width: 380px
+    left: 650px;
+    top: 360px;
+    width: 320px
 }
 
 .shengcheng {
     position: absolute;
-    left: 250px;
-    top: 495px;
-    width: 380px
+    left: 650px;
+    top: 308px;
+    width: 320px
 }
 
 
